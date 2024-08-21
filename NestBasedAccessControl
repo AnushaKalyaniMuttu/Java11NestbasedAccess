@@ -1,0 +1,7 @@
+/*
+Java 11 introduces the notion of nestmates and the associated access rules within the JVM.
+A nest of classes in Java implies both the outer/main class and all its nested classes:
+*/
+
+assertThat(MainClass.class.isNestmateOf(MainClass.NestedClass.class)).isTrue();
+assertThat(MainClass.NestedClass.class.getNestHost()).isEqualTo(MainClass.class);
